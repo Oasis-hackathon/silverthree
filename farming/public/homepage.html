@@ -1,9 +1,11 @@
 <!doctype html>
 <html lang="ko">
     <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-        <link rel= "stylesheet" type="text/css" href="style.css">
+        <link rel= "stylesheet" type="text/css" href="/public/stylesheets/style.css">
     </head>
     <body>
         <div class="wrap">
@@ -30,12 +32,7 @@
                     <h1>"포도 전염병 검사"</h1>
                     <h4 class="contents1">포도 잎사귀를 이용해 전염병을 검사합니다.</h4>
                            
-                </div>
-                
-                
-            
-                
-
+                </div>           
             </div>
         </div>
       <!--intro end-->
@@ -48,7 +45,15 @@
                   <div class="contents1_bold">
                       <검사 대상>                      
                   </div>
-                  <div class="enter">ATTACH</div>
+                  <form id  =  "uploadForm"
+                    enctype  =  "multipart/form-data"
+                    action   =  "/file/upload"
+                    method   =  "post">
+                    <input type='file' accept='image/jpg,image/png,image/jpeg,image/gif' id='profile_img_upload'/>
+                    <label for='profile_img_upload'><i class="input-file-button" ></i> &nbsp;파일 선택</label>
+                    <input class = "enter" type="submit" value="파일 업로드" name="submit">
+                </form>
+                  <!-- <div class="enter">ATTACH</div> -->
               </li>
               <li>
                   <div class="contents1_bold"><검사 결과></div>
