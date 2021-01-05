@@ -1,0 +1,179 @@
+*{
+    font-family: 'Noto Sans KR', sans-serif;
+    list-style: none;
+    text-decoration: none;
+    border-collapse: collapse;
+    margin:0px;
+    padding:0px;
+    color:black;
+
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: normal;
+}
+.contents1{
+    font-size: 24px;
+}
+.contents1_bold{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/*-------*/
+
+.intro_bg{
+    background-image:url("image/grapes1.png.jpg");
+    width:100%;
+    height:718px;
+
+}
+.header{
+    display:flex;
+    width:1280px;
+    height: 86px;
+    margin:auto;
+   
+
+}
+.searchArea{
+    width: 300px;
+    height:40px;
+    background:rgba(0,0,0,0.5);
+    border-radius: 5px;
+    margin-top: 24px;
+}
+.searchArea > form > input{
+    border:none;
+    width: 250px;
+    height:40px;
+    background:rgba(0,0,0,0.0);
+    color: #fff;
+    padding-left: 10px;
+}
+.searchArea > form > span{
+    width: 50px;
+    color:#fff;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+.nav{
+
+    display:flex;
+    justify-content:flex-end;
+    line-height: 86px;
+    width:calc(1280px - 300px);
+    
+}
+.nav > li{
+    margin-left:84px;
+}
+.nav > li> a{
+    color: #fff;
+}
+
+.intro_text{
+    width:1280px;
+    margin:auto;
+    text-align:right;
+    padding-top: 30px;
+    font-weight: bold;
+}
+.intro_text > h1,
+.intro_text > h4{
+    columns: #999999;;
+
+}
+
+/*main_text0*/
+
+.main_text0{
+    width:100%;
+    height:800px;
+    background:#f1f2f3;
+}
+
+.main_text0 > h1 {
+    padding-top:60px;
+    text-align: center;
+    font-weight: lighter;
+}
+.main_text0 > .contents1{
+    text-align: center;
+}
+
+.icons{
+    display: flex;
+    width:1280px;
+    height: 500px;
+    /* background:orange; */
+    margin: auto;
+}
+
+.icons > li{
+    flex:1;
+    background: white;
+    margin-top: 49px;
+    height:500px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1); 
+    text-align:center;
+}
+
+.icons > li:not(:last-child){
+    margin-right: 20px;
+}
+
+.enter{
+    width:100px;
+    height:30px;
+    background:#2F7AF4;
+    color:#fff;
+    margin:420px auto;
+    font-size: 12px;
+    
+}
+
+/* main_text1 */
+.main_text1 {
+    width:100%;
+    height:418px;
+    background-image: url("image/grap.png");
+}
+
+
+.main_text1 > ul{
+    display: flex;
+    padding-top: 20px;
+}
+
+.main_text1 > ul >li:first-child{
+    flex: 1;
+    text-align: center;
+    
+}
+.main_text1 > ul >li:last-child{
+    flex: 1;
+    text-align: center;
+    
+}
+
+.main_text1 > ul > li> div > h1 {
+    color:#fff;
+} 
+
+
+
+footer {
+    display: flex;
+    background: #1f1f1f;
+    padding:30px;
+}
+
+
+footer > div {
+    text-align: center;
+    color: #fff;
+
+}
