@@ -8,9 +8,16 @@
     $ source ~/.bashrc
     
     $ conda create -n (가상환경이름) python=3.5.3 anaconda
+    
     activate 오류뜨면
+    
     $ source ~/anaconda3/etc/profile.d/conda.sh
     $ pip install --upgrade pip
     $ pip install tensorflow
     $ pip install opencv-python
     $ pip install opencv-contrib-python
+    $ sudo apt-get install libgl1-mesa-glx
+    
+    detection.py 경로 수정하기
+    
+    
