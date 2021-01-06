@@ -5,13 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-<<<<<<< HEAD:farming/public/homepage.html
         <link rel= "stylesheet" type="text/css" href="/public/stylesheets/style.css">
-=======
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.8.9/brython.min.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.8.9/brython_stdlib.min.js"></script>
-        <link href="style.css">
->>>>>>> 40803961462477275a24a06d93f25a48da5d53be:homepage.html
     </head>
     <body>
         <div class="wrap">
@@ -53,16 +47,42 @@
                   </div>
                   <form id  =  "uploadForm"
                     enctype  =  "multipart/form-data"
-                    action   =  "/file/upload"
-                    method   =  "post">
+                    method   =  "get"
+                    target   =  "iframe1">
                     <input type='file' accept='image/jpg,image/png,image/jpeg,image/gif' id='profile_img_upload'/>
                     <label for='profile_img_upload'><i class="input-file-button" ></i> &nbsp;파일 선택</label>
-                    <input class = "enter" type="submit" value="파일 업로드" name="submit">
+                    <iframe id="iframe1" name="iframe1" style="display:none"></iframe>
+
+                    <input class = "enter" type="submit" value="파일 업로드" name="submit" onclick = upload()>
+                    <script>
+                        function upload(){
+                            var xhr = new XMLHttpRequest();
+                            xhr.onreadystatechange = function() {
+                            if (xhr.readyState === xhr.DONE) {
+                            if (xhr.status === 200 || xhr.status === 201) {
+                            console.log(xhr.responseText);
+                            } else {
+                         console.error(xhr.responseText);
+                            }
+                        }
+                        };
+                    xhr.open('GET', 'http://192.168.56.1:3500/api/result/');
+                    xhr.send();
+                            alert("업로드 완료! AI 모델을 통해 판별합니다.");
+                        
+                        var AIresult = document.getElementById("AIupload");
+                        AIresult.innerHTML = '<검사 결과><br><iframe src="http://192.168.56.1:3500/api/result/" style="width:90%" height="335" scrolling="auto"></iframe>'
+            }
+                    </script>
+                            
+                
                 </form>
                   <!-- <div class="enter">ATTACH</div> -->
               </li>
               <li>
-                  <div class="contents1_bold"><검사 결과></div>
+                  <div class="contents1_bold" id = "AIupload"><검사 결과>
+                    이곳에 표시됩니다.
+                </div>
               </li>
           </ul>
 
