@@ -49,8 +49,27 @@
                     enctype  =  "multipart/form-data"
                     method   =  "get"
                     target   =  "iframe1">
-                    <input type='file' accept='image/jpg,image/png,image/jpeg,image/gif' id='profile_img_upload'/>
+
+                    <div id="preview"></div>
+                    <input type='file' accept='image/jpg,image/png,image/jpeg,image/gif' id='profile_img_upload'
+                    onchange="previewImage(this)"/>
+
                     <label for='profile_img_upload'><i class="input-file-button" ></i> &nbsp;파일 선택</label>
+                    
+                    
+                    <script>
+                        function previewImage(f){
+ 
+                         var file = f.files;
+                         var reader = new FileReader();       
+                          reader.onload = function(rst){
+                             document.getElementById('preview').innerHTML = '<img src="' + rst.target.result + '">';
+                         }    
+                         reader.readAsDataURL(file[0]);
+                     }
+                     </script>
+ 
+                    
                     <iframe id="iframe1" name="iframe1" style="display:none"></iframe>
 
                     <input class = "enter" type="submit" value="파일 업로드" name="submit" onclick = upload()>
